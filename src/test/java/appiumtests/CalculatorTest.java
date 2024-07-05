@@ -23,14 +23,15 @@ public class CalculatorTest {
     public static void openCalculator() throws Exception {
         DesiredCapabilities cap = new DesiredCapabilities();
 
-        cap.setCapability("deviceName", "RMX3242");
-        cap.setCapability("udid", "XCOJEUBEVKAYRSKB");
+        cap.setCapability("deviceName", "Galaxy A32");
+        cap.setCapability("udid", "R58R83MKLLA");
         cap.setCapability("platformName", "Android");
         cap.setCapability("platformVersion", "13");
+        cap.setCapability("noReset", "true");
         cap.setCapability("automationName", "UiAutomator2");
 
-        cap.setCapability("appPackage", "com.coloros.calculator");
-        cap.setCapability("appActivity", "com.android.calculator2.Calculator");
+        cap.setCapability("appPackage", "com.riotgames.league.teamfighttactics");
+        cap.setCapability("appActivity", "com.riotgames.leagueoflegends.RiotNativeActivity");
 
         URL url = new URL("http://127.0.0.1:4723/");
         driver = new AppiumDriver<MobileElement>(url, cap);
