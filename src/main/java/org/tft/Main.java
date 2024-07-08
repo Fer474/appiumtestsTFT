@@ -1,5 +1,12 @@
 package org.tft;
 
+import org.openqa.selenium.Point;
+import org.openqa.selenium.interactions.Pause;
+import org.openqa.selenium.interactions.PointerInput;
+import org.openqa.selenium.interactions.Sequence;
+
+import java.time.Duration;
+
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
@@ -14,4 +21,6 @@ public class Main {
             System.out.println("i = " + i);
         }
     }
+
+
 }
