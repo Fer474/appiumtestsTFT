@@ -53,15 +53,15 @@ public class StartConnection {
 
 //    ThreadLocal<WebDriver> driver = new ThreadLocal<>();
 //
-//    public AndroidDriver getDriver(){
-//        return driver.get();
-//    }
+    public AndroidDriver getDriver(){
+        return driver;
+    }
 
     public void startConnection(){
         var options = new BaseOptions()
                 .amend("platformName", "Android")
                 .amend("appium:platformVersion", defaults.get("platformVersion"))
-                .amend("appium:deviceName", "R58R83MKLLA")
+                .amend("appium:deviceName", defaults.get("platformVersion"))
                 .amend("appium:app", "C:\\Users\\fchac\\Downloads\\TFT.apk")
                 .amend("appium:automationName", "UiAutomator2")
                 .amend("appium:noReset", "true")
@@ -83,6 +83,7 @@ public class StartConnection {
         } catch (MalformedURLException e) {
             throw new RuntimeException(e);
         }
+        System.out.println("Service Started . . . .");
 //        JSONObject values= defaults();
 //
 //        DesiredCapabilities cap = new DesiredCapabilities();
@@ -124,6 +125,7 @@ public class StartConnection {
         if(driver.getSessionId() != null){
             try {
                 driver.quit();
+                System.out.println("Service Stopped . . . .");
             }catch (Exception e){
                 System.err.println("Unable to quit");
             }

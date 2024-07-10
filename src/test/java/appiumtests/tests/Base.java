@@ -1,5 +1,6 @@
 package appiumtests.tests;
 
+import appiumtests.pages.Login;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.remote.options.BaseOptions;
 import org.junit.After;
@@ -10,10 +11,12 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 public class Base {
-    private AndroidDriver driver;
-
+//    private AndroidDriver driver;
+    Login loginPage;
     @Before
     public void setUp() {
+        StartConnection.getInstance().startConnection();
+        loginPage = new Login();
 
 //        var options = new BaseOptions()
 //                .amend("platformName", "Android")
