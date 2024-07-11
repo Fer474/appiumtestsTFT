@@ -1,6 +1,7 @@
 package appiumtests.tests;
 
 import appiumtests.pages.Login;
+import appiumtests.pages.Menu;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.remote.options.BaseOptions;
 import org.junit.After;
@@ -13,10 +14,13 @@ import java.net.URL;
 public class Base {
 //    private AndroidDriver driver;
     Login loginPage;
+    Menu menuPage;
     @Before
     public void setUp() {
         StartConnection.getInstance().startConnection();
         loginPage = new Login();
+        menuPage = new Menu();
+
 
 //        var options = new BaseOptions()
 //                .amend("platformName", "Android")
