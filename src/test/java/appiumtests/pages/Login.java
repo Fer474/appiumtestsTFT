@@ -46,18 +46,46 @@ public class Login extends Common {
         }
         return this;
     }
-//    public Login loginAs(String userName){
-//        WebElement txtUsername = driver.findElement(AppiumBy.androidUIAutomator("new UiSelector().className(\"android.widget.EditText\").instance(1)"));
-////        new WebDriverWait(driver, Duration.ofSeconds(30)).until(ExpectedConditions.visibilityOf(txtUsername));
-//        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+
+    public Login loginAs(String userName){
+        try {
+            Thread.sleep(5000); // Pausa durante 1000 milisegundos (1 segundo)
+        } catch (InterruptedException e) {
+            // Manejo de excepciones aquí
+        }
+
+        WebElement txtUsername = driver.findElement(AppiumBy.androidUIAutomator("new UiSelector().className(\"android.widget.EditText\").instance(0)"));
+//        new WebDriverWait(driver, Duration.ofSeconds(30)).until(ExpectedConditions.visibilityOf(txtUsername));
+        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 //        thread.sleep(30000);
-//        try {
-//            txtUsername.clear();
-//        }catch (TimeoutException te){
-//            preLoading(txtUsername);
-//            txtUsername.clear();
-//        }
-//        txtUsername.sendKeys(userName);
-//        return this;
-//    }
+        try {
+            txtUsername.clear();
+        }catch (TimeoutException te){
+            preLoading(txtUsername);
+            txtUsername.clear();
+        }
+        txtUsername.sendKeys(userName);
+        return this;
+    }
+
+    public Login withPassword(String userName){
+        try {
+            Thread.sleep(5000); // Pausa durante 1000 milisegundos (1 segundo)
+        } catch (InterruptedException e) {
+            // Manejo de excepciones aquí
+        }
+
+        WebElement txtPassword = driver.findElement(AppiumBy.androidUIAutomator("new UiSelector().className(\"android.widget.EditText\").instance(1)"));
+//        new WebDriverWait(driver, Duration.ofSeconds(30)).until(ExpectedConditions.visibilityOf(txtUsername));
+        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+//        thread.sleep(30000);
+        try {
+            txtPassword.clear();
+        }catch (TimeoutException te){
+            preLoading(txtPassword);
+            txtPassword.clear();
+        }
+        txtPassword.sendKeys(userName);
+        return this;
+    }
 }

@@ -28,15 +28,14 @@ public class Common {
             new WebDriverWait(driver, Duration.ofSeconds(15))
                     .until(ExpectedConditions.visibilityOf(opt));
         }catch (TimeoutException te){
-            driver.navigate().refresh();
-//			preLoading(opt);
+			preLoading(opt);
         }
         return this;
     }
 
     public Common clickElement (int x, int y){
         final var finger = new PointerInput(PointerInput.Kind.TOUCH, "finger");
-        var tapPoint = new Point(859, 835);
+        var tapPoint = new Point(x, y);
         var tap = new Sequence(finger, 1);
         tap.addAction(finger.createPointerMove(Duration.ofMillis(0),
                 PointerInput.Origin.viewport(), tapPoint.x, tapPoint.y));

@@ -6,7 +6,7 @@ public class Tests extends Base {
     @Test
     public void sampleTest(){
         loginPage.loginWith("Riot");
-//        loginPage.loginAs("fersh474");
+        loginPage.loginAs("fersh474").withPassword("Avengers3..");
     }
 //    static Actions actions = new Actions();
 
