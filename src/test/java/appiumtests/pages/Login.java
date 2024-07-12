@@ -55,9 +55,7 @@ public class Login extends Common {
         }
 
         WebElement txtUsername = driver.findElement(AppiumBy.androidUIAutomator("new UiSelector().className(\"android.widget.EditText\").instance(0)"));
-//        new WebDriverWait(driver, Duration.ofSeconds(30)).until(ExpectedConditions.visibilityOf(txtUsername));
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-//        thread.sleep(30000);
         try {
             txtUsername.clear();
         }catch (TimeoutException te){
@@ -76,9 +74,7 @@ public class Login extends Common {
         }
 
         WebElement txtPassword = driver.findElement(AppiumBy.androidUIAutomator("new UiSelector().className(\"android.widget.EditText\").instance(1)"));
-//        new WebDriverWait(driver, Duration.ofSeconds(30)).until(ExpectedConditions.visibilityOf(txtUsername));
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-//        thread.sleep(30000);
         try {
             txtPassword.clear();
         }catch (TimeoutException te){

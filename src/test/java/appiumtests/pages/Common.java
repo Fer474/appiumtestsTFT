@@ -1,7 +1,6 @@
 package appiumtests.pages;
 
 import io.appium.java_client.android.AndroidDriver;
-import org.checkerframework.checker.units.qual.C;
 import org.openqa.selenium.Point;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebElement;
