@@ -3,7 +3,7 @@ package appiumtests.pages;
 public class Menu extends Common{
     public Menu play(){
         try {
-            Thread.sleep(10000); // Pausa durante 1000 milisegundos (1 segundo)
+            Thread.sleep(20000); // Pausa durante 1000 milisegundos (1 segundo)
         } catch (InterruptedException e) {
             // Manejo de excepciones aquí
         }
