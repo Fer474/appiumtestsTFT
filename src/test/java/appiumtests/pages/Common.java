@@ -50,13 +50,13 @@ public class Common {
         var start = new Point(2146, 611);
         var end = new Point (1790, 616);
         var swipe = new Sequence(finger, 1);
-        swipe.addAction(finger.createPointerMove(Duration.ofMillis(0),
-                PointerInput.Origin.viewport(), start.getX(), start.getY()));
-        swipe.addAction(finger.createPointerDown(PointerInput.MouseButton.LEFT.asArg()));
-        swipe.addAction(finger.createPointerMove(Duration.ofMillis(1000),
-                PointerInput.Origin.viewport(), end.getX(), end.getY()));
-        swipe.addAction(finger.createPointerUp(PointerInput.MouseButton.LEFT.asArg()));
-        driver.perform(Arrays.asList(swipe));
+        swipe.addAction(finger.createPointerMove(Duration.ofMillis(0), //Detect starting finger pressure point
+                PointerInput.Origin.viewport(), start.getX(), start.getY()));//Start the swipe action and detect the start points
+        swipe.addAction(finger.createPointerDown(PointerInput.MouseButton.LEFT.asArg())); //detect the pressure point and starts the movement
+        swipe.addAction(finger.createPointerMove(Duration.ofMillis(1000), //Drives the movement time
+                PointerInput.Origin.viewport(), end.getX(), end.getY())); //determine where is going to stop
+        swipe.addAction(finger.createPointerUp(PointerInput.MouseButton.LEFT.asArg()));//mimic the lift finger action
+        driver.perform(Arrays.asList(swipe));//start the order of actions
         return this;
     }
     public Common rightSwipe (int x, int y){
