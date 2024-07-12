@@ -14,7 +14,20 @@ import org.openqa.selenium.interactions.Pause;
 import org.openqa.selenium.interactions.PointerInput;
 import org.openqa.selenium.interactions.Sequence;
 
-public class Actions{
+public class Actions extends StartConnection{
+    public Sequence clickRiotLogin() {
+        final var finger = new PointerInput(PointerInput.Kind.TOUCH, "finger");
+        var tapPoint = new Point(837, 858);
+        var tap = new Sequence(finger, 1);
+        tap.addAction(finger.createPointerMove(Duration.ofMillis(0),
+                PointerInput.Origin.viewport(), tapPoint.x, tapPoint.y));
+        tap.addAction(finger.createPointerDown(PointerInput.MouseButton.LEFT.asArg()));
+        tap.addAction(new Pause(finger, Duration.ofMillis(50)));
+        tap.addAction(finger.createPointerUp(PointerInput.MouseButton.LEFT.asArg()));
+        return tap;
+    }
+
+
     public Sequence clickPlay() {
         final var finger = new PointerInput(PointerInput.Kind.TOUCH, "finger");
         var tapPoint = new Point(2045, 958);
