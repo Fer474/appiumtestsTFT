@@ -1,5 +1,6 @@
 package appiumtests.tests;
 
+import appiumtests.pages.InGame;
 import appiumtests.pages.Login;
 import appiumtests.pages.Menu;
 import io.appium.java_client.android.AndroidDriver;
@@ -15,11 +16,13 @@ public class Base {
 //    private AndroidDriver driver;
     Login loginPage;
     Menu menuPage;
+    InGame inGamePage;
     @Before
     public void setUp() {
         StartConnection.getInstance().startConnection();
         loginPage = new Login();
         menuPage = new Menu();
+        inGamePage = new InGame();
 
 
 //        var options = new BaseOptions()
