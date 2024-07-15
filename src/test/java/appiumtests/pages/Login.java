@@ -49,7 +49,7 @@ public class Login extends Common {
 
     public Login loginAs(String userName){
         try {
-            Thread.sleep(5000); // Pausa durante 1000 milisegundos (1 segundo)
+            Thread.sleep(10000); // Pausa durante 1000 milisegundos (1 segundo)
         } catch (InterruptedException e) {
             // Manejo de excepciones aquí
         }
@@ -82,6 +82,27 @@ public class Login extends Common {
             txtPassword.clear();
         }
         txtPassword.sendKeys(userName);
+        return this;
+    }
+
+    public Login logIn(){
+        try {
+            Thread.sleep(2000); // Pausa durante 1000 milisegundos (1 segundo)
+        } catch (InterruptedException e) {
+            // Manejo de excepciones aquí
+        }
+
+        WebElement btnSigIn = driver.findElement(AppiumBy.androidUIAutomator("new UiSelector().className(\"android.widget.Button\").instance(1)"));
+//        new WebDriverWait(driver, Duration.ofSeconds(30)).until(ExpectedConditions.visibilityOf(txtUsername));
+        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+//        thread.sleep(30000);
+        try {
+            btnSigIn.clear();
+        }catch (TimeoutException te){
+            preLoading(btnSigIn);
+            btnSigIn.clear();
+        }
+        btnSigIn.click();
         return this;
     }
 }
