@@ -8,11 +8,27 @@
     <artifactId>appiumtestsTFT</artifactId>
     <version>1.0-SNAPSHOT</version>
 
+<!--    <licenses>-->
+<!--        <license>-->
+<!--            <name>Aspose EULA</name>-->
+<!--            <url>https://company.aspose.com/legal/eula</url>-->
+<!--        </license>-->
+<!--    </licenses>-->
+
+    <repositories>
+        <repository>
+            <id>aspose-maven-repo</id>
+            <url>https://repository.aspose.com/repo/</url>
+        </repository>
+    </repositories>
+
     <properties>
         <maven.compiler.source>22</maven.compiler.source>
         <maven.compiler.target>22</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
+
+
 
     <dependencies>
         <!-- https://mvnrepository.com/artifact/io.appium/java-client -->
@@ -51,6 +67,24 @@
             <version>1.1.1</version>
         </dependency>
 
+        <dependency>
+            <groupId>com.microsoft.onnxruntime</groupId>
+            <artifactId>onnxruntime</artifactId>
+            <version>1.16.0</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/com.aspose/aspose-ocr -->
+        <dependency>
+            <groupId>com.aspose</groupId>
+            <artifactId>aspose-ocr</artifactId>
+            <version>24.6.1</version>
+        </dependency>
+
 
     </dependencies>
+<!--    <organization>-->
+<!--        <name>Aspose</name>-->
+<!--        <url>https://products.aspose.com/ocr/java</url>-->
+<!--    </organization>-->
+
 </project>

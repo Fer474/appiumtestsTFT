@@ -6,7 +6,7 @@ import org.junit.Test;
 public class Tests extends Base {
     @Test
     @Description("In this test login ")
-    public void Tutorial(){
+    public void TutorialWithLogin(){
         loginPage.loginWith("Riot");
         loginPage.loginAs("fersh474").withPassword("Avengers3..");
         loginPage.logIn();

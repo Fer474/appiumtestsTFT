@@ -3,7 +3,7 @@ package appiumtests.pages;
 public class InGame extends Common{
     public InGame champ1board(){
         try {
-            Thread.sleep(20000); // Pausa durante 1000 milisegundos (1 segundo)
+            Thread.sleep(10000); // Pausa durante 1000 milisegundos (1 segundo)
         } catch (InterruptedException e) {
             // Manejo de excepciones aquí
         }
