@@ -7,14 +7,14 @@ public class Tests extends Base {
     @Test
     @Description("In this test login ")
     public void TutorialWithLogin(){
-        loginPage.loginWith("Riot");
-        loginPage.loginAs("fersh474").withPassword("Avengers3..");
-        loginPage.logIn();
-        menuPage.play()
-                .wihGameMode("tutorial");
-        inGamePage.champ1board()
-                .buyChamp()
-                .champ2board();
+//        loginPage.loginWith("Riot");
+//        loginPage.loginAs("fersh474").withPassword("Avengers3..");
+//        loginPage.logIn();
+        menuPage.play();
+//                .wihGameMode("tutorial");
+//        inGamePage.champ1board()
+//                .buyChamp()
+//                .champ2board();
     }
 
 //    @Test

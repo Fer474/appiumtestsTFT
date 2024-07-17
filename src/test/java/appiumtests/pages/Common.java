@@ -1,10 +1,9 @@
 package appiumtests.pages;
 
 import io.appium.java_client.android.AndroidDriver;
+import org.apache.commons.io.FileUtils;
 import org.checkerframework.checker.units.qual.C;
-import org.openqa.selenium.Point;
-import org.openqa.selenium.TimeoutException;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Pause;
 import org.openqa.selenium.interactions.PointerInput;
 import org.openqa.selenium.interactions.Sequence;
@@ -13,6 +12,10 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.tft.conections.StartConnection;
 
+import javax.imageio.ImageIO;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 import java.time.Duration;
 import java.util.Arrays;
 
@@ -35,6 +38,7 @@ public class Common {
 
     public Common clickElement (int x, int y){
         System.out.println("dimensity display" + driver.manage().window().getSize());
+        takeScreenshotinPoint();
         final var finger = new PointerInput(PointerInput.Kind.TOUCH, "finger");
         var tapPoint = new Point(x, y);
         var tap = new Sequence(finger, 1);
@@ -120,4 +124,48 @@ public class Common {
         driver.perform(Arrays.asList(swipe));
         return this;
     }
+
+     public Common takeScreenshot (){
+         File screenshotFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+
+         // Guarda la captura en un archivo
+         try {
+             FileUtils.copyFile(screenshotFile, new File("src/main/resources/imagen.png"));
+         } catch (IOException e) {
+             throw new RuntimeException(e);
+         }
+
+         return this;
+     }
+
+     public Common takeScreenshotinPoint (){
+         File screenshotFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+
+         // Recorta el área específica (por ejemplo, coordenadas x, y, ancho y alto)
+         // Puedes usar las dimensiones de tu elemento o área deseada
+         int x = 1839; // Coordenada x
+         int y = 909; // Coordenada y
+         int width = 351; // Ancho
+         int height = 114; // Alto
+
+         // Recorta la imagen
+         BufferedImage fullImage = null;
+         try {
+             fullImage = ImageIO.read(screenshotFile);
+         } catch (IOException e) {
+             throw new RuntimeException(e);
+         }
+         BufferedImage croppedImage = fullImage.getSubimage(x, y, width, height);
+
+         // Guarda la captura recortada en un archivo
+         File croppedFile = new File("src/main/resources/imagen.png");
+         try {
+             ImageIO.write(croppedImage, "png", croppedFile);
+         } catch (IOException e) {
+             throw new RuntimeException(e);
+         }
+
+         return this;
+     }
+
 }

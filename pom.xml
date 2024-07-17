@@ -80,11 +80,13 @@
             <version>24.6.1</version>
         </dependency>
 
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>2.11.0</version> <!-- Usa la versión más reciente -->
+        </dependency>
+
 
     </dependencies>
-<!--    <organization>-->
-<!--        <name>Aspose</name>-->
-<!--        <url>https://products.aspose.com/ocr/java</url>-->
-<!--    </organization>-->
 
 </project>

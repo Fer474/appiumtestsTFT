@@ -38,7 +38,8 @@ public class StartConnection {
 
     Map<String, String> defaults = new HashMap<String, String>() {{
 //        put("deviceName","Galaxy A32");
-        put("deviceName", "R58R83MKLLA");
+//        put("deviceName", "R58R83MKLLA");
+        put("deviceName", "adb-R58R83MKLLA-i4S8g5._adb-tls-connect._tcp");
         put("platformVersion", "13");
     }};
 

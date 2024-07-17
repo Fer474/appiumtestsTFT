@@ -12,11 +12,11 @@ public class Tests {
         RecognitionSettings recognitionSettings = new RecognitionSettings();
 // Add image to the recognition batch
         OcrInput source = new OcrInput(InputType.SingleImage);
-        source.add("src/main/resources/testIMG.png");
+        source.add("src/main/resources/imagen.png");
 // Specify recognition language
 //        RecognitionSettings recognitionSettings = new RecognitionSettings();
-        recognitionSettings.setLanguage(Language.Eng);
-        recognitionSettings.setUpscaleSmallFont(true);
+        recognitionSettings.setLanguage(Language.ExtLatin);
+//        recognitionSettings.setUpscaleSmallFont(true);
 // Extract text from image
         ArrayList<RecognitionResult> results = api.Recognize(source, recognitionSettings);
         System.out.println("Recognition result:\n" + results.get(0).recognitionText);
