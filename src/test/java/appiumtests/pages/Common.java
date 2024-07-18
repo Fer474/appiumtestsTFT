@@ -37,7 +37,12 @@ public class Common {
     }
 
     public Common clickElement (int x, int y){
-        System.out.println("dimensity display" + driver.manage().window().getSize());
+        System.out.println("Current Activity: " + driver.currentActivity());
+        // Obtener la orientación actual del dispositivo
+        ScreenOrientation orientation = driver.getOrientation();
+        System.out.println("La orientación actual es: " + orientation);
+        System.out.println(driver.manage().window().getSize().height);
+        System.out.println(driver.manage().window().getSize().width);
         takeScreenshotinPoint();
         final var finger = new PointerInput(PointerInput.Kind.TOUCH, "finger");
         var tapPoint = new Point(x, y);

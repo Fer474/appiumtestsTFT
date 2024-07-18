@@ -20,6 +20,8 @@ public class Base {
     @Before
     public void setUp() {
         StartConnection.getInstance().startConnection();
+        StartConnection.getInstance().waitForActivity();
+
         loginPage = new Login();
         menuPage = new Menu();
         inGamePage = new InGame();

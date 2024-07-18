@@ -1,8 +1,13 @@
 package org.tft;
 
+import io.appium.java_client.android.AndroidDriver;
+import org.tft.conections.StartConnection;
+
 import java.io.File;
 
 public class Utils {
+
+    AndroidDriver driver = StartConnection.getInstance().getDriver();
 
     public static String getDataDir(Class c) {
         File dir = new File(System.getProperty("user.dir"));
@@ -26,5 +31,15 @@ public class Utils {
 
         return dir.toString() + File.separator;
     }
+
+
+
+    public Double getCoordinates(double coordinate) {
+        double resultInPx = (coordinate/100);
+
+        return 0.0;
+    }
+
+
 
 }

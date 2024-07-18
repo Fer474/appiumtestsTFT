@@ -123,6 +123,16 @@ public class StartConnection {
 //        System.out.println("Application Started . . .");
     }
 
+    public void waitForActivity(){
+        // Esperar hasta que la actividad principal esté activa
+        String currentActivity = driver.currentActivity();
+        while (!currentActivity.equals("com.riotgames.leagueoflegends.RiotNativeActivity")) {
+            currentActivity = driver.currentActivity();
+        }
+
+        System.out.println("The app launched successfully");
+    }
+
     public void removeDriver(){
         if(driver.getSessionId() != null){
             try {
