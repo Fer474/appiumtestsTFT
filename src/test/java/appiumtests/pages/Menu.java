@@ -7,7 +7,7 @@ public class Menu extends Common{
         } catch (InterruptedException e) {
             // Manejo de excepciones aquí
         }
-        clickElement(2006, 965);
+        clickElement(83.583, 89.35185);
         return this;
     }
 

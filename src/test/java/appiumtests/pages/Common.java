@@ -10,6 +10,7 @@ import org.openqa.selenium.interactions.Sequence;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.tft.Utils;
 import org.tft.conections.StartConnection;
 
 import javax.imageio.ImageIO;
@@ -21,6 +22,7 @@ import java.util.Arrays;
 
 public class Common {
     AndroidDriver driver = StartConnection.getInstance().getDriver();
+    Utils utils = new Utils();
 
     public Common(){
         PageFactory.initElements(driver, this);
@@ -36,16 +38,18 @@ public class Common {
         return this;
     }
 
-    public Common clickElement (int x, int y){
-        System.out.println("Current Activity: " + driver.currentActivity());
-        // Obtener la orientación actual del dispositivo
-        ScreenOrientation orientation = driver.getOrientation();
-        System.out.println("La orientación actual es: " + orientation);
-        System.out.println(driver.manage().window().getSize().height);
-        System.out.println(driver.manage().window().getSize().width);
-        takeScreenshotinPoint();
+    public Common clickElement (double x, double y){
+//        System.out.println("Current Activity: " + driver.currentActivity());
+//        // Obtener la orientación actual del dispositivo
+//        ScreenOrientation orientation = driver.getOrientation();
+//        System.out.println("La orientación actual es: " + orientation);
+//        System.out.println("Y: "+driver.manage().window().getSize().height);
+//        System.out.println("X: "+driver.manage().window().getSize().width);
+//        takeScreenshotinPoint();
+        int px = utils.getCoordinatesX(x);
+        int py = utils.getCoordinatesY(y);
         final var finger = new PointerInput(PointerInput.Kind.TOUCH, "finger");
-        var tapPoint = new Point(x, y);
+        var tapPoint = new Point(px, py);
         var tap = new Sequence(finger, 1);
         tap.addAction(finger.createPointerMove(Duration.ofMillis(0),
                 PointerInput.Origin.viewport(), tapPoint.x, tapPoint.y));

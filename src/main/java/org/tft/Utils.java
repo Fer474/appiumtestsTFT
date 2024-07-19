@@ -34,10 +34,16 @@ public class Utils {
 
 
 
-    public Double getCoordinates(double coordinate) {
-        double resultInPx = (coordinate/100);
+    public int getCoordinatesX(double coordinate) {
+        int screenSize = driver.manage().window().getSize().width;
+        int resultInPx = (int) Math.round((coordinate/100) * screenSize);
+        return resultInPx;
+    }
 
-        return 0.0;
+    public int getCoordinatesY(double coordinate) {
+        int screenSize = driver.manage().window().getSize().height;
+        int resultInPy = (int) Math.round((coordinate/100) * screenSize);
+        return resultInPy;
     }
 
 
