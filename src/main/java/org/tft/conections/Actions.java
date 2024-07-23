@@ -38,4 +38,8 @@ public class Actions{
 
     }
 
+    public void imageHasText(){
+
+    }
+
 }

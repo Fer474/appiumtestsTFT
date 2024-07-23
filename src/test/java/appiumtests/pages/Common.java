@@ -75,6 +75,24 @@ public class Common {
         return this;
     }
 
+    public Common moveInCircleAndThrow (int startX, int startY,int ratio, int originTime ){
+        final var finger = new PointerInput(PointerInput.Kind.TOUCH, "finger");
+        var start = new Point(startX, startY);
+        var end = new Point ((startX + ratio), (startY+ ratio));
+        var swipe = new Sequence(finger, 1);
+        for (int i =0; i <= 12; i++ ){
+
+        }
+        swipe.addAction(finger.createPointerMove(Duration.ofSeconds(originTime),
+                PointerInput.Origin.viewport(), start.getX(), start.getY()));
+        swipe.addAction(finger.createPointerDown(PointerInput.MouseButton.LEFT.asArg()));
+        swipe.addAction(finger.createPointerMove(Duration.ofMillis(50),
+                PointerInput.Origin.viewport(), end.getX(), end.getY()));
+        swipe.addAction(finger.createPointerUp(PointerInput.MouseButton.LEFT.asArg()));
+        driver.perform(Arrays.asList(swipe));
+        return this;
+    }
+
     public Common leftSwipe (){
         final var finger = new PointerInput(PointerInput.Kind.TOUCH, "finger");
         var start = new Point(2146, 616);
