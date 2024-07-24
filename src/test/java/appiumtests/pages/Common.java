@@ -61,9 +61,13 @@ public class Common {
     }
 
     public Common moveElement (int startX, int startY,int endX, int endY, int originTime ){
+        int startPx = utils.getCoordinatesX(startX);
+        int startPy = utils.getCoordinatesY(startY);
+        int endPx = utils.getCoordinatesX(endX);
+        int endPy = utils.getCoordinatesY(endY);
         final var finger = new PointerInput(PointerInput.Kind.TOUCH, "finger");
-        var start = new Point(startX, startY);
-        var end = new Point (endX, endY);
+        var start = new Point(startPx, startPy);
+        var end = new Point (endPx, endPy);
         var swipe = new Sequence(finger, 1);
         swipe.addAction(finger.createPointerMove(Duration.ofSeconds(originTime),
                 PointerInput.Origin.viewport(), start.getX(), start.getY()));
@@ -107,6 +111,7 @@ public class Common {
         driver.perform(Arrays.asList(swipe));//start the order of actions
         return this;
     }
+
     public Common rightSwipe (){
         final var finger = new PointerInput(PointerInput.Kind.TOUCH, "finger");
         var start = new Point (1790, 616);

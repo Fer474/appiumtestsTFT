@@ -5,23 +5,30 @@ import org.junit.Assert;
 import org.tft.conections.Actions;
 
 public class Assertions {
-    public void assert1 (){
+    //Create api instance
+    AsposeOCR api = new AsposeOCR();
+    public void imageHasText (String textToFind){
         // ExStart:1
         // The path to the documents directory.
-        String dataDir = Utils.getSharedDataDir(Actions.class);
+        String dataDir = Utils.getSharedDataDir(Assertions.class);
 
         // The image path
-        String imagePath1 = dataDir + "img.png";
-        String imagePath2 = dataDir + "img1.png";
-
-        //Create api instance
-        AsposeOCR api = new AsposeOCR();
-
-        String textToFind = "Kha";
+        String imagePath1 = dataDir + "img.png" ;
 
         // Detect if image has text
         boolean result = api.ImageHasText(imagePath1, textToFind);
         System.out.println("Image Has Text: "+ textToFind + " : " + result);
+    }
+
+    public void imageHas(){
+
+        // ExStart:1
+        // The path to the documents directory.
+        String dataDir = Utils.getSharedDataDir(Assertions.class);
+
+        // The image path
+        String imagePath1 = dataDir + "img.png";
+        String imagePath2 = dataDir + "img.png";
 
         // Compare two images by texts
         boolean isEqual = api.CompareImageTexts(imagePath1, imagePath2);

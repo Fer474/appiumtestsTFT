@@ -28,6 +28,7 @@ public class Utils {
         dir = new File(dir, "src");
         dir = new File(dir, "main");
         dir = new File(dir, "resources");
+        dir = new File(dir, "gameImages");
 
         return dir.toString() + File.separator;
     }
