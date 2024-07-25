@@ -7,20 +7,21 @@ import org.tft.conections.Actions;
 public class Assertions {
     //Create api instance
     AsposeOCR api = new AsposeOCR();
-    public void imageHasText (String textToFind){
+    public Assertions imageHasText (String textToFind, String imageName){
         // ExStart:1
         // The path to the documents directory.
         String dataDir = Utils.getSharedDataDir(Assertions.class);
 
         // The image path
-        String imagePath1 = dataDir + "img.png" ;
+        String imagePath1 = dataDir + imageName ;
 
         // Detect if image has text
         boolean result = api.ImageHasText(imagePath1, textToFind);
         System.out.println("Image Has Text: "+ textToFind + " : " + result);
+        return this;
     }
 
-    public void imageHas(){
+    public Assertions compareImages(){
 
         // ExStart:1
         // The path to the documents directory.
@@ -38,5 +39,6 @@ public class Assertions {
         float diff = api.ImageTextDiff(imagePath1, imagePath2);
         System.out.println("Difference: " + diff);
         // ExEnd:1
+        return this;
     }
 }

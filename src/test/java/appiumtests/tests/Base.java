@@ -7,6 +7,7 @@ import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.remote.options.BaseOptions;
 import org.junit.After;
 import org.junit.Before;
+import org.tft.Assertions;
 import org.tft.conections.StartConnection;
 
 import java.net.MalformedURLException;
@@ -17,6 +18,8 @@ public class Base {
     Login loginPage;
     Menu menuPage;
     InGame inGamePage;
+    Assertions asserts;
+
     @Before
     public void setUp() {
         StartConnection.getInstance().startConnection();
@@ -25,6 +28,7 @@ public class Base {
         loginPage = new Login();
         menuPage = new Menu();
         inGamePage = new InGame();
+        asserts = new Assertions();
 
 
 //        var options = new BaseOptions()
