@@ -28,7 +28,7 @@ public class Utils {
         dir = new File(dir, "src");
         dir = new File(dir, "main");
         dir = new File(dir, "resources");
-        dir = new File(dir, "gameImages");
+        dir = new File(dir, "screenshots");
 
         return dir.toString() + File.separator;
     }
@@ -46,4 +46,5 @@ public class Utils {
         int resultInPy = (int) Math.round((coordinate/100) * screenSize);
         return resultInPy;
     }
+
 }

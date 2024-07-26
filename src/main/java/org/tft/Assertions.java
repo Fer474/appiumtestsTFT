@@ -1,8 +1,10 @@
 package org.tft;
 
-import com.aspose.ocr.AsposeOCR;
+import com.aspose.ocr.*;
 //import org.junit.Assert;
 import org.tft.conections.Actions;
+
+import java.util.ArrayList;
 
 public class Assertions {
     //Create api instance
@@ -21,24 +23,45 @@ public class Assertions {
         return this;
     }
 
-    public Assertions compareImages(){
+    public boolean compareImages(String img1, String img2){
 
         // ExStart:1
         // The path to the documents directory.
         String dataDir = Utils.getSharedDataDir(Assertions.class);
 
         // The image path
-        String imagePath1 = dataDir + "img.png";
-        String imagePath2 = dataDir + "img.png";
+        String imagePath1 = dataDir + img1 +  ".png";
+        String imagePath2 = dataDir + img2 + ".png";
 
         // Compare two images by texts
         boolean isEqual = api.CompareImageTexts(imagePath1, imagePath2);
-        System.out.println("Images are equal: " + isEqual);
+//        System.out.println("Images are equal: " + isEqual);
 
         // Compare two images by texts
-        float diff = api.ImageTextDiff(imagePath1, imagePath2);
-        System.out.println("Difference: " + diff);
+//        float diff = api.ImageTextDiff(imagePath1, imagePath2);
+//        System.out.println("Difference: " + diff);
         // ExEnd:1
-        return this;
+        return isEqual;
+    }
+    public String getText(String imgName){
+        // Initialize Aspose.OCR recognition API
+        AsposeOCR api = new AsposeOCR();
+        RecognitionSettings recognitionSettings = new RecognitionSettings();
+        // Add image to the recognition batch
+        OcrInput source = new OcrInput(InputType.SingleImage);
+        source.add("src/main/resources/screenshots/"+imgName+".png");
+        // Specify recognition language
+//        RecognitionSettings recognitionSettings = new RecognitionSettings();
+        recognitionSettings.setLanguage(Language.Eng);
+//        recognitionSettings.setUpscaleSmallFont(true);
+        // Extract text from image
+        ArrayList<RecognitionResult> results = null;
+        try {
+            results = api.Recognize(source, recognitionSettings);
+        } catch (AsposeOCRException e) {
+            throw new RuntimeException(e);
+        }
+//        System.out.println("Recognition result:\n" + results.get(0).recognitionText);
+        return results.get(0).recognitionText;
     }
 }

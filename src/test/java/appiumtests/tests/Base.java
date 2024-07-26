@@ -3,6 +3,7 @@ package appiumtests.tests;
 import appiumtests.pages.InGame;
 import appiumtests.pages.Login;
 import appiumtests.pages.Menu;
+import appiumtests.pages.Validations;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.remote.options.BaseOptions;
 import org.junit.After;
@@ -18,7 +19,7 @@ public class Base {
     Login loginPage;
     Menu menuPage;
     InGame inGamePage;
-    Assertions asserts;
+    Validations validation;
 
     @Before
     public void setUp() {
@@ -28,7 +29,7 @@ public class Base {
         loginPage = new Login();
         menuPage = new Menu();
         inGamePage = new InGame();
-        asserts = new Assertions();
+        validation = new Validations();
 
 
 //        var options = new BaseOptions()

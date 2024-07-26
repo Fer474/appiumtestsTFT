@@ -12,7 +12,7 @@ public class Tests {
         RecognitionSettings recognitionSettings = new RecognitionSettings();
 // Add image to the recognition batch
         OcrInput source = new OcrInput(InputType.SingleImage);
-        source.add("src/main/resources/imagen.png");
+        source.add("src/main/resources/screenshots/screenshotName.png");
 // Specify recognition language
 //        RecognitionSettings recognitionSettings = new RecognitionSettings();
         recognitionSettings.setLanguage(Language.Eng);

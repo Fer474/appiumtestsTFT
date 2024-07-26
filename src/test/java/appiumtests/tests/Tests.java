@@ -11,10 +11,10 @@ public class Tests extends Base {
 //        loginPage.loginAs("fersh474").withPassword("Avengers3..");
 //        loginPage.logIn();
         menuPage.play().wihGameMode("tutorial");
-
         inGamePage.champ1board()
-                .buyChamp()
-                .champ2board();
+                .buyChamp();
+        validation.validateGoldIsReducted();
+        inGamePage.champ2board();
     }
 
 //    @Test

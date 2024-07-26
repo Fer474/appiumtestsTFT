@@ -7,22 +7,17 @@ public class InGame extends Common{
         } catch (InterruptedException e) {
             // Manejo de excepciones aquí
         }
-        moveElement(601,962,1203,717,1);
+        moveElement(25.04,89.07,50.13,66.39,1);
         try {
             Thread.sleep(38000); // Pausa durante 1000 milisegundos (1 segundo)
         } catch (InterruptedException e) {
             // Manejo de excepciones aquí
         }
-        takeScreenshotinPoint(2186, 923, 66,80);
+        takeScreenshotinPoint(2186, 923, 66,80, "goldBeforeBuy");
         return this;
     }
     public InGame champ2board(){
-        try {
-            Thread.sleep(2000); // Pausa durante 1000 milisegundos (1 segundo)
-        } catch (InterruptedException e) {
-            // Manejo de excepciones aquí
-        }
-        moveElement(601,962,1511,717,1);
+        moveElement(25.04,89.07,62.96,66.39,1);
         return this;
     }
 
@@ -34,6 +29,13 @@ public class InGame extends Common{
             // Manejo de excepciones aquí
         }
         clickElement(61.21,19.07);
+        try {
+            Thread.sleep(2000); // Pausa durante 1000 milisegundos (1 segundo)
+        } catch (InterruptedException e) {
+            // Manejo de excepciones aquí
+        }
+        takeScreenshotinPoint(2186, 923, 66,80, "goldAfterBuy");
+
         return this;
     }
 }

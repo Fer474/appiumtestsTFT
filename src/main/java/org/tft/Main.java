@@ -45,12 +45,12 @@ public class Main {
 //        System.out.println("La ubicación en porcentaje " + ubicacionEnPorcentajeY +
 //                " equivale a aproximadamente " + porcentajeY + "px del contenedor.");
 
-//        // Initialize Aspose.OCR recognition API
+        // Initialize Aspose.OCR recognition API
 //        AsposeOCR api = new AsposeOCR();
 //        ReceiptRecognitionSettings recognitionSettings = new ReceiptRecognitionSettings();
 //        // Add image to the recognition batch
 //        OcrInput source = new OcrInput(InputType.SingleImage);
-//        source.add("src/main/resources/testIMG.png");
+//        source.add("src/main/resources/screenshots/screenshotName.png");
 //        // Specify recognition language
 ////        RecognitionSettings recognitionSettings = new RecognitionSettings();
 //        recognitionSettings.setLanguage(Language.ExtLatin);
