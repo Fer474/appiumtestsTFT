@@ -32,16 +32,16 @@ public class Login extends Common {
     public Login loginWith(String loginType){
         switch (loginType) {
             case ("Riot"):
-                clickElement(852, 852);
+                clickElement(35.50, 78.89);
                 break;
             case ("Google"):
-                clickElement(1083, 852);
+                clickElement(45.13, 78.89);
                 break;
             case ("Xbox"):
-                clickElement(1314, 852);
+                clickElement(54.75, 78.89);
                 break;
             case ("Facebook"):
-                clickElement(1545, 852);
+                clickElement(64.38, 78.89);
                 break;
         }
         return this;

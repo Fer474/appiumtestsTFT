@@ -15,7 +15,7 @@ public class Tests {
         source.add("src/main/resources/imagen.png");
 // Specify recognition language
 //        RecognitionSettings recognitionSettings = new RecognitionSettings();
-        recognitionSettings.setLanguage(Language.ExtLatin);
+        recognitionSettings.setLanguage(Language.Eng);
 //        recognitionSettings.setUpscaleSmallFont(true);
 // Extract text from image
         ArrayList<RecognitionResult> results = api.Recognize(source, recognitionSettings);

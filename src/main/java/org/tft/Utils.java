@@ -46,7 +46,4 @@ public class Utils {
         int resultInPy = (int) Math.round((coordinate/100) * screenSize);
         return resultInPy;
     }
-
-
-
 }

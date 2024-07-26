@@ -1,7 +1,7 @@
 package org.tft;
 
 import com.aspose.ocr.AsposeOCR;
-import org.junit.Assert;
+//import org.junit.Assert;
 import org.tft.conections.Actions;
 
 public class Assertions {

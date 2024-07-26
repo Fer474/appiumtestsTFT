@@ -7,8 +7,8 @@ import java.util.*;
 
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.remote.options.BaseOptions;
-import org.json.simple.JSONObject;
-import org.json.simple.JSONValue;
+//import org.json.simple.JSONObject;
+//import org.json.simple.JSONValue;
 
 import io.appium.java_client.AppiumDriver;
 //import io.appium.java_client.MobileElement;
@@ -60,7 +60,7 @@ public class StartConnection {
         var options = new BaseOptions()
                 .amend("platformName", "Android")
                 .amend("appium:platformVersion", defaults.get("platformVersion"))
-                .amend("appium:deviceName", defaults.get("platformVersion"))
+                .amend("appium:deviceName", defaults.get("deviceName"))
                 .amend("appPackage", "com.riotgames.league.teamfighttactics")
                 .amend("appActivity", "com.riotgames.leagueoflegends.RiotNativeActivity")
                 .amend("appium:automationName", "UiAutomator2")

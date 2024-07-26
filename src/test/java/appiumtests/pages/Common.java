@@ -170,16 +170,17 @@ public class Common {
          return this;
      }
 
-     public Common takeScreenshotinPoint (){
+     public Common takeScreenshotinPoint (int x, int y, int width, int height){
          File screenshotFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 
          // Recorta el área específica (por ejemplo, coordenadas x, y, ancho y alto)
          // Puedes usar las dimensiones de tu elemento o área deseada
-         int x = 1839; // Coordenada x
-         int y = 909; // Coordenada y
-         int width = 351; // Ancho
-         int height = 114; // Alto
-
+//         int x = 1839; // Coordenada x
+//         int y = 909; // Coordenada y
+//         int width = 351; // Ancho
+//         int height = 114; // Alto
+//         int px = utils.getCoordinatesX(x);
+//         int py = utils.getCoordinatesY(y);
          // Recorta la imagen
          BufferedImage fullImage = null;
          try {
@@ -187,10 +188,12 @@ public class Common {
          } catch (IOException e) {
              throw new RuntimeException(e);
          }
+         String screenshotName = "screenshotName";
          BufferedImage croppedImage = fullImage.getSubimage(x, y, width, height);
 
          // Guarda la captura recortada en un archivo
-         File croppedFile = new File("src/main/resources/imagen.png");
+         String pathName = "src/main/resources/screenshots/" + screenshotName;
+         File croppedFile = new File(pathName);
          try {
              ImageIO.write(croppedImage, "png", croppedFile);
          } catch (IOException e) {

@@ -7,7 +7,7 @@ public class Menu extends Common{
         } catch (InterruptedException e) {
             // Manejo de excepciones aquí
         }
-        clickElement(83.583, 89.35185);
+        clickElement(83.58, 89.35);
         return this;
     }
 
@@ -18,30 +18,30 @@ public class Menu extends Common{
             // Manejo de excepciones aquí
         }
         switch (gameMode.toUpperCase()) {
-            case ("FIESTA DE PENGU"):
-                rightSwipe();
-                clickElement(332, 688);
-                break;
             case ("NORMAL"):
                 rightSwipe();
-                clickElement(746, 688);
+                clickElement(13.83, 63.70);
                 break;
-            case ("CLASIFICATORIA"):
+            case ("RANKED"):
                 rightSwipe();
-                clickElement(1169, 688);
+                clickElement(31.08, 63.70);
                 break;
-            case ("DUO DINAMICO"):
+            case ("DOUBLE UP"):
                 rightSwipe();
-                clickElement(1597, 688);
+                clickElement(48.71, 63.70);
                 break;
             case ("HYPER ROLL"):
                 rightSwipe();
-                clickElement(2026, 688);
+                clickElement(66.54, 63.70);
                 break;
             case ("TUTORIAL"):
-                leftSwipe();
-                clickElement(2194, 688);
+                rightSwipe();
+                clickElement(84.42, 63.70);
                 acceptTutorial();
+                break;
+            case ("TUTORIAL1"):
+                leftSwipe();
+                clickElement(91.42, 63.70);
                 break;
         }
         return this;
@@ -53,7 +53,7 @@ public class Menu extends Common{
         } catch (InterruptedException e) {
             // Manejo de excepciones aquí
         }
-        clickElement(2021, 967);
+        clickElement(84.21, 89.54);
         return this;
     }
 
@@ -63,12 +63,12 @@ public class Menu extends Common{
         } catch (InterruptedException e) {
             // Manejo de excepciones aquí
         }
-        clickElement(1198, 818);
+        clickElement(49.92, 75.74);
         return this;
     }
 
     private void acceptTutorial(){
-        clickElement(1349, 672);
+        clickElement(56.21, 62.22);
         try {
             Thread.sleep(30000); // Pausa durante 1000 milisegundos (1 segundo)
         } catch (InterruptedException e) {

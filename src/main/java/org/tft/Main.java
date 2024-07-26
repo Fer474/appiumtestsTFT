@@ -31,19 +31,20 @@ public class Main {
 //        double porcentaje = (ubicacionEnPixeles / (double) tamanoContenedor) * 100;
 //        System.out.println("La ubicación en píxeles " + ubicacionEnPixeles +
 //                " equivale a aproximadamente " + porcentaje + "% del contenedor.");
-
+//
 //        int ubicacionEnPixelesY = 965; // Ejemplo: ubicación en píxeles
 //        int tamanoContenedorY = 1080; // Ejemplo: tamaño total del contenedor en píxeles display(2400, 1080)
 //        double porcentajeY = (ubicacionEnPixelesY / (double) tamanoContenedorY) * 100;
 //        System.out.println("La ubicación en píxeles " + ubicacionEnPixelesY +
 //                " equivale a aproximadamente " + porcentajeY + "% del contenedor.");
+//
+//
+//        double ubicacionEnPorcentajeY = 89.35185; // Ejemplo: ubicación en píxeles
+//        int tamanoContenedorY = 1080; // Ejemplo: tamaño total del contenedor en píxeles display(2400, 1080)
+//        int porcentajeY = (int) Math.round((ubicacionEnPorcentajeY /100) * tamanoContenedorY);
+//        System.out.println("La ubicación en porcentaje " + ubicacionEnPorcentajeY +
+//                " equivale a aproximadamente " + porcentajeY + "px del contenedor.");
 
-
-        double ubicacionEnPorcentajeY = 89.35185; // Ejemplo: ubicación en píxeles
-        int tamanoContenedorY = 1080; // Ejemplo: tamaño total del contenedor en píxeles display(2400, 1080)
-        int porcentajeY = (int) Math.round((ubicacionEnPorcentajeY /100) * tamanoContenedorY);
-        System.out.println("La ubicación en porcentaje " + ubicacionEnPorcentajeY +
-                " equivale a aproximadamente " + porcentajeY + "px del contenedor.");
 //        // Initialize Aspose.OCR recognition API
 //        AsposeOCR api = new AsposeOCR();
 //        ReceiptRecognitionSettings recognitionSettings = new ReceiptRecognitionSettings();

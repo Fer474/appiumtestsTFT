@@ -10,11 +10,11 @@ public class Tests extends Base {
 //        loginPage.loginWith("Riot");
 //        loginPage.loginAs("fersh474").withPassword("Avengers3..");
 //        loginPage.logIn();
-        menuPage.play();
-//                .wihGameMode("tutorial");
-//        inGamePage.champ1board()
-//                .buyChamp()
-//                .champ2board();
+        menuPage.play().wihGameMode("tutorial");
+
+        inGamePage.champ1board()
+                .buyChamp()
+                .champ2board();
     }
 
 //    @Test
